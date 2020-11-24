@@ -6,7 +6,6 @@ const tbody = d3.select("tbody") ;
  var ProductdefElement ;
  var cetaneoctaneElement ;
  var requesterElement ;
- var button ;
  var codeValue ;
  var ProductdefValue ;
  var cetaneoctaneValue ;
@@ -59,11 +58,9 @@ const tbody = d3.select("tbody") ;
         cetaneoctaneElement = d3.select("#cetaneoctane");
         requesterElement = d3.select("#requester");
       displaydata(tableData);
-      button = d3.select("#filter-btn");
-      nextButton = d3.select("#nextButton")
-      prevButton = d3.select("#prevButton")
-      resetButton= d3.select("#reset-btn")
-      nextButton.on("click", function(){
+
+      
+      $("#nextButton").click(function(){
         if (MxVal < 3376){
           console.log(FF);
           MnVal = MnVal + 20 ;
@@ -75,7 +72,7 @@ const tbody = d3.select("tbody") ;
           }
        };
       })
-     prevButton.on("click", function(){
+      $("#prevButton").click(function(){
        if (MnVal > 0){
           MnVal = MnVal - 20 ;
           MxVal = MxVal - 20 ;
@@ -87,7 +84,7 @@ const tbody = d3.select("tbody") ;
           }
        };
       })
-      button.on("click", function() {
+      $("#filter-btn").click(function(){ 
         FF === true ;
         tableData = data;
         filteredData = tableData; 
@@ -157,7 +154,7 @@ const tbody = d3.select("tbody") ;
      }
      });
  //  resetting the displayed data to the full dataset while keeping the filter values untouched
- resetButton.on("click", function() {
+ $("#reset-btn").click(function(){  
    reset()
  });
  function reset(){

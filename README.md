@@ -12,3 +12,5 @@
 * In-memory table that returns search results 
 * Dynamic Visualization to show amount of product based on country
 * Visual map to show terminal locations around the world where product is brought
+
+#### URL: http://api.pidx.org:8080/
